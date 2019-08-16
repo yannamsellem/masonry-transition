@@ -22,7 +22,8 @@ function App() {
   const [items, set] = useState(data)
 
   useEffect(() => {
-    setTimeout(() => set(shuffle), 2000)
+    const id = setTimeout(() => set(shuffle), 2000)
+    return () => clearTimeout(id)
   })
 
   const heights = new Array(columns).fill(0)
