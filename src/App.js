@@ -40,7 +40,7 @@ function App() {
     }
   })
 
-  const transitions = useTransition(gridItems, item => item.key, {
+  const transitions = useTransition(gridItems, (item) => item.key, {
     from: ({ xy, width, height }) => ({
       xy,
       width,

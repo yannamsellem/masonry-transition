@@ -2,7 +2,8 @@ import { useEffect, useState, useCallback } from 'react'
 
 export default function useMedia(queries, values, defaultValue) {
   const match = useCallback(
-    () => values[queries.findIndex(q => matchMedia(q).matches)] || defaultValue,
+    // eslint-disable-next-line max-len
+    () => values[queries.findIndex((q) => matchMedia(q).matches)] || defaultValue,
     [defaultValue, queries, values],
   )
 
